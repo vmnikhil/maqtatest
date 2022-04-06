@@ -1,0 +1,38 @@
+<div class="employee container">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Emp-id</th>
+                <th scope="col">dob</th>
+                <th scope="col">email</th>
+                <th scope="col">gender</th>
+                <th scope="col">mobile</th>
+                <th scope="col">address</th>
+                <th scope="col">company</th>
+                <th scope="col">fullName</th>
+                <th scope="col">position</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        
+        <tbody class="table-striped">
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.dob | date: 'dd/MM/yyyy'}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.gender | gender}}</td>
+                <td>{{employee.mobile}}</td>
+                <td>{{employee.address}}</td>
+                <td>{{employee.company}}</td>
+                <td>{{employee.fullName}}</td>
+                <td>{{employee.position}}</td>
+                <td>
+                    <button type="button" class="btn btn-info d-inline p-2" [routerLink]="['/employee/', 'view', employee.id]" >view</button>
+                    <button type="button" class="btn btn-primary d-inline p-2" [routerLink]="['/employee/', 'update', employee.id]">update</button>
+                    <button type="button" class="btn btn-danger d-inline p-2" [routerLink]="['/employee/', 'delete', employee.id]">delete</button>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>

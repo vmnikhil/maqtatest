@@ -1,0 +1,86 @@
+<div class="container">
+    <h1>Update Employee Details</h1>
+
+    <a href="#" routerLink="/employee/all" class="btn btn-primary">Back</a>
+
+    <form [formGroup]="form" (ngSubmit)="update()">
+        <div>
+            <label>employee id : {{ employee.id }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">dob:</label>
+            <input formControlName="dob" id="dob" type="date" [(ngModel)]="employee.dob" class="form-control">
+            <div *ngIf="fc.dob.touched && fc.dob.invalid" class="alert alert-danger">
+                <div *ngIf="fc.dob.errors && fc.dob.errors.required">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input formControlName="email" id="email" type="email" [(ngModel)]="employee.email" class="form-control">
+            <div *ngIf="fc.email.touched && fc.email.invalid" class="alert alert-danger">
+                <div *ngIf="fc.email.errors && fc.email.errors.required">email is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">gender</label>
+            <select formControlName="gender" id="gender" type="gender" [(ngModel)]="employee.gender"
+                class="form-control">
+                <option value=true>Male</option>
+                <option value=false>Female</option>
+            </select>
+            <div *ngIf="fc.gender.touched && fc.gender.invalid" class="alert alert-danger">
+                <div *ngIf="fc.gender.errors && fc.gender.errors.required">gender is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">mobile</label>
+            <input formControlName="mobile" id="mobile" type="mobile" [(ngModel)]="employee.mobile"
+                class="form-control">
+            <div *ngIf="fc.mobile.touched && fc.mobile.invalid" class="alert alert-danger">
+                <div *ngIf="fc.mobile.errors && fc.mobile.errors.required">mobile is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">address</label>
+            <input formControlName="address" id="address" type="address" [(ngModel)]="employee.address"
+                class="form-control">
+            <div *ngIf="fc.address.touched && fc.address.invalid" class="alert alert-danger">
+                <div *ngIf="fc.address.errors && fc.address.errors.required">address is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="company">company</label>
+            <input formControlName="company" id="company" type="company" [(ngModel)]="employee.company"
+                class="form-control">
+            <div *ngIf="fc.company.touched && fc.company.invalid" class="alert alert-danger">
+                <div *ngIf="fc.company.errors && fc.company.errors.required">company is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fullName">fullName</label>
+            <input formControlName="fullName" id="fullName" type="fullName" [(ngModel)]="employee.fullName"
+                class="form-control">
+            <div *ngIf="fc.fullName.touched && fc.fullName.invalid" class="alert alert-danger">
+                <div *ngIf="fc.fullName.errors && fc.fullName.errors.required">fullName is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="position">position</label>
+            <input formControlName="position" id="position" type="position" [(ngModel)]="employee.position"
+                class="form-control">
+            <div *ngIf="fc.position.touched && fc.position.invalid" class="alert alert-danger">
+                <div *ngIf="fc.position.errors && fc.position.errors.required">position is required.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>

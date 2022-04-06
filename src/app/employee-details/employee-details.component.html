@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Employee Details</h1>
+
+    <div>
+        <th>employee id</th>
+        <p>{{ employee.id }}</p>
+    </div>
+
+    <div>
+        <th>dob</th>
+        <p>{{ employee.dob }}</p>
+    </div>
+
+    <div>
+        <th>email</th>
+        <p>{{ employee.email }}</p>
+    </div>
+    <div>
+        <th>gender</th>
+        <p>{{ employee.gender | gender}}</p>
+    </div>
+    <div>
+        <th>address</th>
+        <p>{{ employee.address }}</p>
+    </div>
+    <div>
+        <th>company</th>
+        <p>{{ employee.company }}</p>
+    </div>
+
+    <div>
+        <th>fullName</th>
+        <p>{{ employee.fullName }}</p>
+    </div>
+
+    <div>
+        <th>position</th>
+        <p>{{ employee.position }}</p>
+    </div>
+
+
+    <button class="btn btn-primary ml-auto " [routerLink]="['/employee/all']">Back</button>
+</div>
